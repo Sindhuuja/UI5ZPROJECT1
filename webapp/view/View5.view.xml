@@ -1,0 +1,118 @@
+<mvc:View
+    controllerName="com.project1.project1.controller.View5"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:smartTable="sap.ui.comp.smarttable">
+
+    <VBox class="sapUiSmallMargin">
+ 
+        <!-- Header -->
+        <HBox justifyContent="SpaceBetween">
+            <Text text="Welcome : Sriram Varma Dantuluri"/>
+            <Text text="System : OTS"/>
+            <Text text="{/currentDate}"/>
+        </HBox>
+        <Panel width="auto" >
+		<headerToolbar>
+			<OverflowToolbar >
+				<Title text="Charge Back Report" textAlign="Center"/>
+			</OverflowToolbar>
+		</headerToolbar>
+		</Panel>
+		
+ 
+        <!-- FIXED FILTER BAR -->
+        <fb:FilterBar
+            id="filterBar"
+            showGoOnFB="true"
+            showClearOnFB="true"
+            useToolbar="true">
+ 
+            <fb:filterGroupItems>
+ 
+                <fb:FilterGroupItem name="Region" label="Region" groupName="__basic">
+                    <fb:control>
+                        <Select width="160px"/>
+                    </fb:control>
+                </fb:FilterGroupItem>
+ 
+                <fb:FilterGroupItem name="BusinessArea" label="Business Area" groupName="__basic">
+                    <fb:control>
+                        <Select width="160px"/>
+                    </fb:control>
+                </fb:FilterGroupItem>
+ 
+                <fb:FilterGroupItem name="Office" label="Office" groupName="__basic">
+                    <fb:control>
+                        <Input id="officeInput" width="160px"/>
+                    </fb:control>
+                </fb:FilterGroupItem>
+ 
+                <fb:FilterGroupItem name="Service" label="Service" groupName="__basic">
+                    <fb:control>
+                        <Select width="160px"/>
+                    </fb:control>
+                </fb:FilterGroupItem>
+ 
+                <fb:FilterGroupItem name="PO" label="Purchase Order" groupName="__basic">
+                    <fb:control>
+                        <Input width="160px"/>
+                    </fb:control>
+                </fb:FilterGroupItem>
+ 
+                <fb:FilterGroupItem name="PR" label="Purchase Requisition" groupName="__basic">
+                    <fb:control>
+                        <Input width="160px"/>
+                    </fb:control>
+                </fb:FilterGroupItem>
+ 
+            </fb:filterGroupItems>
+ 
+        </fb:FilterBar>
+ 
+        <!-- SMART TABLE -->
+        <smartTable:SmartTable
+            id="smartTable"
+            tableType="ResponsiveTable"
+            showRowCount="false"
+            enableAutoBinding="true">
+ 
+            <Table items="{/orders}">
+ 
+                <columns>
+                    <Column><Text text="Office"/></Column>
+                    <Column><Text text="Order"/></Column>
+                    <Column><Text text="Amount"/></Column>
+                    <Column><Text text="Quantity"/></Column>
+                    <Column><Text text="Status"/></Column>
+                    <Column><Text text="DFR"/></Column>
+                    <Column><Text text="Grant"/></Column>
+                    <Column><Text text="Days"/></Column>
+                    <Column><Text text="Funds"/></Column>
+                </columns>
+ 
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{Office}"/>
+                            <Text text="{Order}"/>
+                            <Text text="{Amount}"/>
+                            <Text text="{Quantity}"/>
+                            <ObjectStatus text="{Status}" state="Success"/>
+                            <Text text="{DFR}"/>
+                            <Text text="{Grant}"/>
+                            <Text text="{Days}"/>
+                            <Text text="{Funds}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+ 
+            </Table>
+ 
+        </smartTable:SmartTable>
+ 
+    </VBox>
+ 
+</mvc:View>

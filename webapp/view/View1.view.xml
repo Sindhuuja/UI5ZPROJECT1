@@ -1,0 +1,57 @@
+<mvc:View
+  controllerName="com.project1.project1.controller.View1"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core">
+
+  <Page title="View 1">
+
+    <content>
+
+      <!-- Display passed value -->
+      <VBox class="sapUiSmallMargin" width="100%">
+
+    <!-- Dropdown + Button -->
+    <HBox alignItems="Center" class="sapUiSmallMarginBottom">
+
+        <Select id="categorySelect" width="250px">
+            <items>
+                <core:Item key="responsive" text="Responsive Controls"/>
+                <core:Item key="layout" text="Layout Controls"/>
+                <core:Item key="core" text="Core &amp; Base Controls"/>
+                <core:Item key="flexible" text="Flexible Layout Controls"/>
+                <core:Item key="charts" text="Charts &amp; Visualization"/>
+            </items>
+        </Select>
+
+        <Button text="Go" press="onGoPress" class="sapUiTinyMarginBegin"/>
+
+    </HBox>
+
+    <!-- Spacer (IMPORTANT) -->
+    <HBox height="20px"/>
+
+    <!-- Result Section BELOW -->
+    <Panel headerText="Result" width="100%">
+
+        <Text id="resultText"
+              text="Select a category"
+              wrapping="true"
+              class="sapUiSmallMargin"/>
+
+    </Panel>
+
+</VBox>
+
+    </content>
+    <footer>
+        <Bar>
+            <contentLeft>
+                <Text text="Selected category detailed information -----this is plain text like paragragh"/>
+            </contentLeft>
+        </Bar>
+    </footer>
+
+  </Page>
+
+</mvc:View>

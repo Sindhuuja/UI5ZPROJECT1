@@ -1,0 +1,23 @@
+<mvc:View
+  controllerName="com.project1.project1.controller.Main"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m">
+
+  <Page title="Main View">
+
+    <content>
+
+      <Label text="Enter Name"/>
+
+      <Input id="Name" placeholder="Enter Name"/>
+
+      <Button text="Task Surya1" press="onTask3"/>
+      <Button text="Task Sravani1" press="onTask2"/>
+      <Button text="Task Surya2" press="onTask1"/>
+      <Button text="Task Sravani2" press="onTask4"/>
+
+    </content>
+
+  </Page>
+
+</mvc:View>

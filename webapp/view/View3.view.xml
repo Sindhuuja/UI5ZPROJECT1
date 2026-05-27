@@ -1,0 +1,25 @@
+<mvc:View
+    controllerName="com.project1.project1.controller.View3"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Page title="List of Controls">
+    <VBox class="sapUiSmallMargin">
+        <!-- Dropdown -->
+        <Select width="300px" items="{/categories}" change="onCategoryChange">
+ 
+            <core:Item key="{key}" text="{name}" />
+        </Select>
+ 
+        <!-- Title -->
+        <Text text="Sub Category Items" class="sapUiSmallMarginTop"/>
+ 
+        <!-- List -->
+        <List items="{/selectedItems}">
+            <items>
+                <StandardListItem title="{name}" />
+            </items>
+        </List>
+    </VBox>
+    </Page>
+</mvc:View>

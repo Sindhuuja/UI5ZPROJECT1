@@ -1,0 +1,212 @@
+<mvc:View xmlns:layout="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form">
+
+    <Page title="Customer Contract Creation" titleAlignment="Center" showNavButton="true">
+
+        <!-- HEADER ICONS -->
+        <headerContent>
+            <OverflowToolbar>
+                <ToolbarSpacer />
+
+                <Button icon="sap-icon://home"
+                        type="Emphasized"
+                        tooltip="Home"
+                        press="onHomePress"
+                        />
+
+                <Button icon="sap-icon://create"
+                        type="Emphasized"
+                        tooltip="Create"
+                        press="onCreatePress" />
+
+                <Button icon="sap-icon://edit"
+                        type="Emphasized"
+                        tooltip="Edit"
+                        press="onEditPress" />
+
+                <Button icon="sap-icon://search"
+                        type="Emphasized"
+                        tooltip="Search"
+                        press="onSearchPress" />
+            </OverflowToolbar>
+        </headerContent>
+
+        <!-- PAGE CONTENT -->
+        <layout:Grid defaultSpan="L6 M6 S12" class="sapUiSmallMarginTop">
+        
+            <form:SimpleForm
+                id="customerContractFormLeftColumn"
+                layout="ResponsiveGridLayout"
+                editable="true"
+                labelSpanXL="4"
+                labelSpanL="4"
+                labelSpanM="4"
+                labelSpanS="12"
+                columnsXL="2"
+                columnsL="2"
+                columnsM="2"
+                singleContainerFullSize="true">
+
+                <!-- LEFT COLUMN -->
+                
+                
+                <Label text="Valid From" required="true" />
+                <DatePicker value="{/validFrom}" displayFormat="MM/dd/yyyy" />
+
+                <Label text="Sold To Name" required="true" />
+                <Input value="{/soldToName}" />
+
+                <Label text="Sold To Address" />
+                <Input value="{/soldToAddress}" />
+
+                <Label text="Sold To State" />
+                <Select items="{/stateList}">
+                    <core:Item key="{key}" text="{text}" />
+                </Select>
+
+                <Label text="Payer Number" />
+                <Input value="{/payerNumber}" />
+
+                <Label text="Ship To / Job Name" required="true" />
+                <Input value="{/shipToJobName}" />
+
+                <Label text="PO Number" required="true" />
+                <Input value="{/poNumber}" />
+
+                <Label text="Ship To Address" />
+                <Input value="{/shipToAddress}" />
+
+                <Label text="Ship To State" required="true" />
+                <Select items="{/stateList}">
+                    <core:Item key="{key}" text="{text}" />
+                </Select>
+
+                <Label text="County / District" required="true" />
+                <Input value="{/county}" />
+
+                <Label text="Valid To" required="true" />
+                <DatePicker value="{/validTo}" displayFormat="MM/dd/yyyy" />
+
+                <Label text="Sold To Number" />
+                <Input value="{/soldToNumber}" />
+
+                <Label text="Sold To City" />
+                <Input value="{/soldToCity}" />
+
+                <Label text="Sold To Zip Code" />
+                <Input value="{/soldToZip}" />
+
+                <Label text="Bill To Number" />
+                <Input value="{/billToNumber}" />
+
+                <Label text="Plan Name" />
+                <Select items="{/planList}">
+                    <core:Item key="{key}" text="{text}" />
+                </Select>
+
+                <Label text="Job Number" />
+                <Input value="{/jobNumber}" />
+
+            </form:SimpleForm>
+                
+
+                <!-- RIGHT COLUMN -->
+            <form:SimpleForm
+                id="customerContractFormRightCoulumn"
+                layout="ResponsiveGridLayout"
+                editable="true"
+                labelSpanXL="4"
+                labelSpanL="4"
+                labelSpanM="4"
+                labelSpanS="12"
+                columnsXL="2"
+                columnsL="2"
+                columnsM="2"
+                singleContainerFullSize="true">  
+                <Label text="Valid To" required="true" />
+                <DatePicker value="{/validTo}" displayFormat="MM/dd/yyyy" />
+
+                <Label text="Sold To Number" />
+                <Input value="{/soldToNumber}" />
+
+                <Label text="Sold To City" />
+                <Input value="{/soldToCity}" />
+
+                <Label text="Sold To Zip Code" />
+                <Input value="{/soldToZip}" />
+
+                <Label text="Bill To Number" />
+                <Input value="{/billToNumber}" />
+
+                <Label text="Plan Name" />
+                <Select items="{/planList}">
+                    <core:Item key="{key}" text="{text}" />
+                </Select>
+
+                <Label text="Job Number" />
+                <Input value="{/jobNumber}" />
+
+                <Label text="Ship To City" required="true" />
+                <Input value="{/shipToCity}" />
+
+                <Label text="Ship To Zip Code" required="true" />
+                <Input value="{/shipToZip}" />
+
+                <Label text="Country" required="true" />
+                <Select items="{/countryList}">
+                    <core:Item key="{key}" text="{text}" />
+                </Select>
+                
+                <Label text="Sold To Name" required="true" />
+                <Input value="{/soldToName}" />
+
+                <Label text="Sold To Address" />
+                <Input value="{/soldToAddress}" />
+
+                <Label text="Sold To State" />
+                <Select items="{/stateList}">
+                    <core:Item key="{key}" text="{text}" />
+                </Select>
+
+                <Label text="Payer Number" />
+                <Input value="{/payerNumber}" />
+
+                <Label text="Ship To / Job Name" required="true" />
+                <Input value="{/shipToJobName}" />
+
+                <Label text="PO Number" required="true" />
+                <Input value="{/poNumber}" />
+
+                <Label text="Ship To Address" />
+                <Input value="{/shipToAddress}" />
+
+                <Label text="Ship To State" required="true" />
+                <Select items="{/stateList}">
+                    <core:Item key="{key}" text="{text}" />
+                </Select>
+
+                <Label text="County / District" required="true" />
+                <Input value="{/county}" />
+                
+
+            </form:SimpleForm>
+            </layout:Grid>
+<footer>
+            <Toolbar height="35px">
+                <Button text="Save" icon="sap-icon://decline" type="Reject"/>
+                <ToolbarSpacer/>
+                <Button text="Save As Template" icon="sap-icon://decline" type="Reject"/>
+                <ToolbarSpacer/>
+                <Button text="Preview" icon="sap-icon://decline" type="Reject"/>
+                <Button text="Submit To Admin" enabled="false"/>
+                <Button text="Submit To Specialist" icon="sap-icon://decline" type="Reject"/>
+            </Toolbar>
+        </footer>
+ 
+        
+
+    </Page>
+</mvc:View>
